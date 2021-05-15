@@ -21,19 +21,7 @@
         </style>
     </head>
     <body class="antialiased">
-
-        @challenge(test1)
-            @variant(varianta, 1)
-                <a href="{{ url('varianta') }}">
-                    <img src="{{ asset('images/varianta.jpg') }}" alt="Variant A" />
-                </a>
-            @endvariant
-            @variant(variantb, 2)
-                <a href="{{ url('variantb') }}">
-                    <img src="{{ asset('images/variantb.jpg') }}" alt="Variant B" />
-                </a>
-            @endvariant
-        @endchallenge
-
+    @goal(variantb)
+    You clicked B variant.
     </body>
 </html>

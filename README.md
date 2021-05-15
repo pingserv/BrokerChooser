@@ -2,6 +2,41 @@
 
 ## BrokerChooser Senior Backend Developer Homework
 
+The application will be available at <b>http://localhost:8080/</b> 
+
+####Install and build docker container:
+```
+https://github.com/pingserv/BrokerChooser.git
+cd BrokerChooser
+docker-compose build
+docker-compose up -d
+docker-compose exec app composer install
+docker-compose exec app chown -R www-data:www-data ./
+docker-compose exec app php artisan config:cache
+docker-compose exec app php artisan migrate --seed
+```
+
+####List challenges:
+```
+php artisan challenge:list
+```
+
+####Start challenges:
+```
+php artisan challenge:start <challenge>
+```
+
+####Stop challenges:
+```
+php artisan challenge:stop <challenge>
+```
+
+####Report challenges:
+```
+php artisan challenge:report <challenge>
+```
+
+### Description
 Congratulations on getting to this part of our interview process!
 
 Here you can find a basic Laravel project configured with some extra features.

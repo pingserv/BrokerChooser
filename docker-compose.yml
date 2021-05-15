@@ -1,0 +1,22 @@
+version: '3.7'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: .docker/Dockerfile
+    image: 'laravelapp'
+    ports:
+      - 8080:80
+    volumes:
+      - ./:/var/www/html
+
+  postgres:
+    restart: always
+    image: sameersbn/postgresql:9.6-2
+    ports:
+      - "5432:5432"
+    environment:
+      - DB_USER=brokerchooser
+      - DB_PASS=brokerchooser
+      - DB_NAME=brokerchooser
+

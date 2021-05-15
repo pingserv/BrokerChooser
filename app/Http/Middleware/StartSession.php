@@ -45,15 +45,6 @@ class StartSession
             $this->session->put(self::DB_SESSION_ID_KEY, $session->id);
         }
 
-        if ($request->getMethod() === 'GET' && !$request->isXmlHttpRequest()) {
-            $session->events()->create([
-                'category' => 'pageview',
-                'action' => 'pageview',
-                'label' => 'pageview',
-                'url' => url($request->path())
-            ]);
-        }
-
         $this->application->instance(Session::class, $session);
 
         return $next($request);
