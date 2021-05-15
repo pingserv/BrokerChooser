@@ -6,7 +6,7 @@ The application will be available at <b>http://localhost:8080/</b>
 
 ####Install and build docker container:
 ```
-https://github.com/pingserv/BrokerChooser.git
+git clone https://github.com/pingserv/BrokerChooser.git
 cd BrokerChooser
 docker-compose build
 docker-compose up -d
